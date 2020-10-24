@@ -22,6 +22,10 @@ class Room:
 
     def add_guest_to_room(self, guest):
         self.guests.append(guest)
-        return(self.guests)
+        return self.guests
+
+    def remove_guest_from_room(self, guest):
+        self.guests.remove(guest)
+        return self.guests 
 
         
