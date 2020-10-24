@@ -34,9 +34,16 @@ class TestRoom(unittest.TestCase):
     def test_add_song_to_room(self):
         self.room4.add_song_to_room(self.room4, self.song8)
         self.assertEqual("Hung Up", self.room4.songs[0].title)
+        # self.assertEqual(1, len(self.room4.songs))
         
     def test_how_many_songs_in_room(self):
         self.assertEqual(3, len(self.room1.songs))
     
-    # def test
-        
+    def test_find_song_in_room_by_title(self):
+        self.assertEqual(self.room1.songs[1].title, self.room1.find_song_in_room_by_title("Toxic"))
+
+    def test_if_song_is_in_room__True(self):
+        self.assertEqual(True, self.room2.song_in_room(self.song5))
+
+    def test_if_song_is_in_room__False(self):
+        self.assertEqual(False, self.room2.song_in_room(self.song7))
