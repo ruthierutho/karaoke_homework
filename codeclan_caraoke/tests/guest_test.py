@@ -12,6 +12,9 @@ class TestGuest(unittest.TestCase):
         self.guest5 = Guest("Jamie", "Hung Up", 86)
 
     def test_guest_has_name(self):
-        self.assertEqual("Jackie", self.guest4)
-        
+        self.assertEqual("Jackie", self.guest4.name)
+    
+    def test_guest_has_favourite_song(self):
+        self.assertEqual("Dirrty", self.guest3.favourite_song)
+
     
