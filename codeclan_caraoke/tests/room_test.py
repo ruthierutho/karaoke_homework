@@ -17,10 +17,18 @@ class TestRoom(unittest.TestCase):
         self.song8 = Song("Hung Up", "Madonna")
         self.song9 = Song("Material Girl", "Madonna")
 
-        self.room1 = Room("Britney Room", 12, [self.song1, self.song2, self.song3])
-        self.room2 = Room("Christina Room", 6, [self.song4, self.song5, self.song6])
-        self.room3 = Room("Madonna Room", 10, [self.song7, self.song8, self.song9])
-        self.room4 = Room("Other Room", 2, [])
+        self.guest1 = Guest("Joanne", "Like a Prayer", 47)
+        self.guest2 = Guest("Jane", "...Baby One More Time", 19)
+        self.guest3 = Guest("Julie", "Dirrty", 35)
+        self.guest4 = Guest("Jackie", "Toxic", 45)
+        self.guest5 = Guest("Jamie", "Hung Up", 86)
+
+        self.room1 = Room("Britney Room", 12, [self.song1, self.song2, self.song3], [])
+        self.room2 = Room("Christina Room", 6, [self.song4, self.song5, self.song6], [])
+        self.room3 = Room("Madonna Room", 10, [self.song7, self.song8, self.song9], [])
+        self.room4 = Room("Other Room", 2, [], [self.guest4, self.guest5])
+
+       
 
     def test_room_has_name(self):
         self.assertEqual("Britney Room", self.room1.name)
@@ -47,3 +55,10 @@ class TestRoom(unittest.TestCase):
 
     def test_if_song_is_in_room__False(self):
         self.assertEqual(False, self.room2.song_in_room(self.song7))
+
+    def test_add_guest_to_room(self):
+        self.room1.add_guest_to_room(self.guest2)
+        self.assertEqual("Jane", self.room1.guests[0].name)
+
+    # def test_remove_guest_from_room(self):
+    #     self.
