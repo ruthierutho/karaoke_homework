@@ -32,7 +32,7 @@ class Room:
         if self.capacity <= len(self.guests):
             return "Room is full sorry!"
         elif self.capacity > len(self.guests):
-             self.guests.append(guest)
+             self.add_guest_to_room(guest)
 
 
         
