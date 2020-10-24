@@ -32,6 +32,11 @@ class TestRoom(unittest.TestCase):
         self.assertEqual("Material Girl", self.room3.songs[2].title)
 
     def test_add_song_to_room(self):
-        self.room4.add_song_to_room(self.room4, self.song9)
-        self.assertEqual(1, len(self.room4.songs))
+        self.room4.add_song_to_room(self.room4, self.song8)
+        self.assertEqual("Hung Up", self.room4.songs[0].title)
+        
+    def test_how_many_songs_in_room(self):
+        self.assertEqual(3, len(self.room1.songs))
+    
+    # def test
         
