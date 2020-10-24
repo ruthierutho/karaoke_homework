@@ -28,4 +28,11 @@ class Room:
         self.guests.remove(guest)
         return self.guests 
 
+    def check_capacity_before_entry(self, guest):
+        if self.capacity <= len(self.guests):
+            return "Room is full sorry!"
+        elif self.capacity > len(self.guests):
+             self.guests.append(guest)
+
+
         

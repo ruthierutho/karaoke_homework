@@ -63,3 +63,10 @@ class TestRoom(unittest.TestCase):
     def test_remove_guest_from_room(self):
         self.room4.remove_guest_from_room(self.guest4)
         self.assertEqual(1, len(self.room4.guests))
+
+    def test_check_capacity_before_entry_full(self):
+        self.assertEqual("Room is full sorry!", self.room4.check_capacity_before_entry(self.guest1))
+
+    def test_check_capacity_before_entry_not_full(self):
+        self.room2.check_capacity_before_entry(self.guest2)
+        self.assertEqual(1, len(self.room2.guests))
