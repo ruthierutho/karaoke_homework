@@ -42,3 +42,4 @@ class TestGuest(unittest.TestCase):
     def test_guest_react_to_fave_song__negative(self):
         self.guest1.guest_react_to_fave_song(self.room2)
         self.assertEqual("Booooooo that's rubbish", self.guest1.guest_react_to_fave_song(self.room2))
+        
