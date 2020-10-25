@@ -79,4 +79,21 @@ class TestRoom(unittest.TestCase):
         self.room1.add_fee_to_room_till(5)
         self.assertEqual(95, self.room1.till)
 
+    def test_full_guest_check_in_process(self):
+        # check capacity before entry
+        self.room1.check_capacity_before_entry(self.guest4)
+        self.assertEqual(1, len(self.room1.guests))
+        # charge entry fee from guest
+        self.room1.charge_guest_entry_fee(self.guest4, 5)
+        self.assertEqual(40, self.guest4.purse)
+        # add fee to room till
+        self.room1.add_fee_to_room_till(5)
+        self.assertEqual(95, self.room1.till)
+        # guest can check for fave song
+        self.guest4.guest_react_to_fave_song(self.room1)
+        self.assertEqual("Yassss put it on! I know allll the words!!", self.guest4.guest_react_to_fave_song(self.room1))
+
+
+
+
     
