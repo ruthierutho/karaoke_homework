@@ -34,5 +34,9 @@ class Room:
         elif self.capacity > len(self.guests):
              self.add_guest_to_room(guest)
 
+    def charge_guest_entry_fee(self, guest, fee):
+        guest.purse -= fee
+        
+
 
         

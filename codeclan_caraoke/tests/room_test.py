@@ -70,3 +70,7 @@ class TestRoom(unittest.TestCase):
     def test_check_capacity_before_entry_not_full(self):
         self.room2.check_capacity_before_entry(self.guest2)
         self.assertEqual(1, len(self.room2.guests))
+
+    def test_charge_guest_entry_fee(self):
+        self.room1.charge_guest_entry_fee(self.guest1, 5)
+        self.assertEqual(42, self.guest1.purse)

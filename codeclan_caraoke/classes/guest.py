@@ -3,3 +3,5 @@ class Guest:
         self.name = name
         self.favourite_song = favourite_song
         self.purse = purse
+
+    
