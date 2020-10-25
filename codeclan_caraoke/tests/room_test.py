@@ -23,10 +23,10 @@ class TestRoom(unittest.TestCase):
         self.guest4 = Guest("Jackie", "Toxic", 45)
         self.guest5 = Guest("Jamie", "Hung Up", 86)
 
-        self.room1 = Room("Britney Room", 12, [self.song1, self.song2, self.song3], [])
-        self.room2 = Room("Christina Room", 6, [self.song4, self.song5, self.song6], [])
-        self.room3 = Room("Madonna Room", 10, [self.song7, self.song8, self.song9], [])
-        self.room4 = Room("Other Room", 2, [], [self.guest4, self.guest5])
+        self.room1 = Room("Britney Room", 12, [self.song1, self.song2, self.song3], [], 90)
+        self.room2 = Room("Christina Room", 6, [self.song4, self.song5, self.song6], [], 50)
+        self.room3 = Room("Madonna Room", 10, [self.song7, self.song8, self.song9], [], 35)
+        self.room4 = Room("Other Room", 2, [], [self.guest4, self.guest5], 15)
 
        
 
@@ -74,3 +74,9 @@ class TestRoom(unittest.TestCase):
     def test_charge_guest_entry_fee(self):
         self.room1.charge_guest_entry_fee(self.guest1, 5)
         self.assertEqual(42, self.guest1.purse)
+
+    def test_add_fee_to_room_till(self):
+        self.room1.add_fee_to_room_till(5)
+        self.assertEqual(95, self.room1.till)
+
+    
